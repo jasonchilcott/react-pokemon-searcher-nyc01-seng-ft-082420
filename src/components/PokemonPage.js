@@ -16,12 +16,18 @@ class PokemonPage extends React.Component {
     .then (pokeCollection => this.setState({ pokeCollection: pokeCollection}))
     .catch(e => console.error(e))
   }
+
+  addPokemon = pokemon => {
+    this.setState({ pokeCollection: [...this.state.pokeCollection, pokemon] })
+
+  }
+
   render() {
     return (
       <Container>
         <h1>Pokemon Searcher</h1>
         <br />
-        <PokemonForm />
+        <PokemonForm addPokemon={this.addPokemon}/>
         <br />
         <Search />
         <br />

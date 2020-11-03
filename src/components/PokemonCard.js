@@ -8,7 +8,6 @@ class PokemonCard extends React.Component {
   }
 
   clickHandler = () => {
-    console.log(this.props.sprites)
     this.setState((prevState) => ({clicked: !prevState.clicked}))
 
 
